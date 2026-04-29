@@ -37,17 +37,6 @@
             object-fit: cover;
         }
 
-        .carousel-item {
-            min-height: 400px;
-            position: relative;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 60vh;
-            object-fit: contain;
-        }
-
         .carousel-item::before {
             content: "";
             position: absolute;
@@ -163,7 +152,14 @@
             border-bottom: 1px solid #e5e7eb;
         }
 
-        
+        #s02 .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+
 
         #s03 {
             background: linear-gradient(135deg, #E0E7FF, #F1F5F9);
