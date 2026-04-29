@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>托福學習page3(工作商業)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            TOEFL 工作商業相關英文單字
+        </h1>
+        <p class="text-muted">從日常生活開始，建立你的英文基礎</p>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business2.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business.html">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business2.html">2</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business4.html">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business5.html">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-Work-Business4.html">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>cost</td>
+                                <td>(n.)</td>
+                                <td>成本</td>
+                                <td>Costs are increasing.</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("expense", "(n.)", "支出", "Travel expenses are high.");
+        addWord("fund", "(n./v.)", "資金／資助", "The project is funded.");
+        addWord("capital", "(n.)", "資本", "They raised capital.");
+        addWord("share", "(n.)", "股份", "He owns company shares.");
+        addWord("manage", "(v.)", "管理", "She manages a team.");
+        addWord("management", "(n.)", "管理", "Management is important.");
+        addWord("lead", "(v.)", "帶領", "He leads the project.");
+        addWord("leader", "(n.)", "領導者", "A good leader inspires others.");
+        addWord("organize", "(v.)", "組織", "She organizes events.");
+        addWord("plan", "(v./n.)", "計畫", "We planned the project.");
+        addWord("strategy", "(n.)", "策略", "The company has a strategy.");
+        addWord("goal", "(n.)", "目標", "Our goal is success.");
+        addWord("objective", "(n.)", "目標", "The objective is clear.");
+        addWord("task", "(n.)", "任務", "Finish your task.");
+    </script>
+
+
+
+</body>
+
+</html>

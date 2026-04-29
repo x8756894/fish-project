@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+    <style>
+        body {
+            background: #f8fafc;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        #s01 {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .social-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .social-bar a {
+            color: black;
+            transition: 0.3s;
+        }
+
+        .social-bar a:hover {
+            transform: scale(1.2);
+        }
+
+        .news-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            background-color: white;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .news-img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .badge-custom {
+            background-color: #4A90E2;
+        }
+
+        footer {
+            background-color: #111827;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="text-start">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa-solid fa-a"></i>
+                    <i class="fa-solid fa-b"></i>
+                    <i class="fa-solid fa-c"></i>
+                </a>
+            </div>
+
+            <div class="text-end d-flex align-items-center">
+                <ul class="nav mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">
+                            <i class="fa-regular fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-words.html">
+                            <i class="fa-solid fa-book-bookmark"></i>學習</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-news.html">
+                            <i class="fa-regular fa-newspaper"></i>最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-about-us.html">
+                            <i class="fa-solid fa-circle-info"></i>關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-contact-us.html">
+                            <i class="fa-solid fa-phone"></i>聯絡我們</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="social-bar">
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-instagram fa-2x " style="color: rgb(223, 37, 161);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-facebook fa-2x" style="color: blue;"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-line fa-2x" style="color: rgb(22, 219, 32);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-threads fa-2x" style="color:black"></i>
+            </a>
+        </div>
+    </section>
+    <section id="s02" class="text-center">
+        <div class="container">
+            <h1 class="fw-bold mb-3 wow animate__animated animate__fadeInDown">最新消息</h1>
+            <p class="text-muted">掌握最新課程、活動與英文學習趨勢</p>
+        </div>
+    </section>
+
+    <section id="s03">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp">
+                    <div class="news-card">
+                        <img src="images/news01.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge badge-custom text-white mb-2">活動公告</span>
+                            <h5 class="fw-bold">免費英文體驗課開放報名！</h5>
+                            <p class="news-date">2026 / 04 / 10</p>
+                            <p class="text-muted">
+                                現在報名即可免費體驗一堂專業英文課程，名額有限，立即預約！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="news-card">
+                        <img src="images/news02.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge bg-success mb-2">課程更新</span>
+                            <h5 class="fw-bold">全新 TOEIC 衝刺班上線</h5>
+                            <p class="news-date">2026 / 04 / 05</p>
+                            <p class="text-muted">
+                                針對短期提升分數設計，幫助你在最短時間內突破700分！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                    <div class="news-card">
+                        <img src="images/news03.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge bg-warning text-dark mb-2">學習技巧</span>
+                            <h5 class="fw-bold">每天15分鐘學英文真的有效嗎？</h5>
+                            <p class="news-date">2026 / 04 / 01</p>
+                            <p class="text-muted">
+                                科學研究證實，短時間高頻率學習比長時間更有效！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp">
+                    <div class="news-card">
+                        <img src="images/news04.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge bg-danger mb-2">優惠活動</span>
+                            <h5 class="fw-bold">春季限時優惠 7 折起</h5>
+                            <p class="news-date">2026 / 03 / 28</p>
+                            <p class="text-muted">
+                                現在報名任一課程，即享超值折扣，錯過再等一年！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="news-card">
+                        <img src="images/news05.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge bg-info text-dark mb-2">系統更新</span>
+                            <h5 class="fw-bold">AI發音系統全面升級</h5>
+                            <p class="news-date">2026 / 03 / 20</p>
+                            <p class="text-muted">
+                                更精準辨識你的發音，即時給予改善建議！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                    <div class="news-card">
+                        <img src="images/news06.jpg" class="w-100 news-img">
+                        <div class="p-3">
+                            <span class="badge bg-secondary mb-2">平台公告</span>
+                            <h5 class="fw-bold">會員系統全新上線</h5>
+                            <p class="news-date">2026 / 03 / 10</p>
+                            <p class="text-muted">
+                                現在可追蹤學習進度與個人成就，學習更有成就感！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-light py-4">
+        <div class="container">
+            <h5>ABC English</h5>
+            <p class="text-secondary mb-0">© 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+</body>
+
+</html>

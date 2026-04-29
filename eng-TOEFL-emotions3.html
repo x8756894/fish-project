@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>托福學習page3(情緒與感覺)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            TOEFL 情緒與感覺英文單字
+        </h1>
+        <p class="text-muted">從日常生活開始，建立你的英文基礎</p>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions2.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions.html">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions2.html">2</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions4.html">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions5.html">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-emotions4.html">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>afraid</td>
+                                <td>(adj.)</td>
+                                <td>害怕的</td>
+                                <td>He is afraid of failure.</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("ashamed", "(adj.)", "羞愧的", "I felt ashamed of my mistake.");
+        addWord("guilty", "(adj.)", "愧疚的", "She feels guilty about lying.");
+        addWord("embarrassed", "(adj.)", "尷尬的", "He was embarrassed in class.");
+        addWord("stressed", "(adj.)", "有壓力的", "I am stressed about exams.");
+        addWord("exhausted", "(adj.)", "疲憊的", "She is exhausted after work.");
+        addWord("hopeless", "(adj.)", "絕望的", "He felt hopeless at that moment.");
+        addWord("confused", "(adj.)", "困惑的", "I am confused by the question.");
+        addWord("irritated", "(adj.)", "被惹怒的", "She was irritated by the delay.");
+        addWord("disgusted", "(adj.)", "厭惡的", "He was disgusted by the smell.");
+        addWord("calm", "(adj.)", "冷靜的", "She remained calm during the crisis.");
+        addWord("neutral", "(adj.)", "中立的", "I feel neutral about the topic.");
+        addWord("bored", "(adj.)", "無聊的", "He is bored in class.");
+        addWord("indifferent", "(adj.)", "冷淡的", "She is indifferent to the result.");
+        addWord("serious", "(adj.)", "嚴肅的", "He has a serious expression.");
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>托福學習page3(生活類)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            TOEFL 生活英文單字
+        </h1>
+        <p class="text-muted">從日常生活開始，建立你的英文基礎</p>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life2.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life.html">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life2.html">2</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life4.html">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life5.html">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-TOEFL-daily-life4.html">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>commute</td>
+                                <td>(v./n.)</td>
+                                <td>通勤</td>
+                                <td>I commute by bus every day..</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("vehicle", "(n.)", "車輛", "That vehicle is very expensive.");
+        addWord("traffic", "(n.)", "交通狀況", "Traffic is heavy today.");
+        addWord("congestion", "(n.)", "壅塞", "Traffic congestion is a big problem.");
+        addWord("destinatione", "(n.)", "目的地", "Tokyo is my dream destination.");
+        addWord("route", "(n.)", "路線", "This is the fastest route.");
+        addWord("fare", "(n.)", "車資", "The bus fare is cheap.");
+        addWord("transfer", "(v./n.)", "轉乘", "You need to transfer trains.");
+        addWord("delay", "(n./v.)", "延誤", "The flight was delayed.");
+        addWord("pedestrian", "(n.)", "行人", "Pedestrians must follow the rules.");
+        addWord("symptom", "(n.)", "症狀", "Fever is a common symptom.");
+        addWord("treatment", "(n.)", "治療", "The treatment was effective.");
+        addWord("medication", "(n.)", "藥物", "Take this medication daily.");
+        addWord("prescription", "(n.)", "處方", "You need a prescription.");
+        addWord("diagnosis", "(n.)", "診斷", "The doctor made a diagnosis.");
+    </script>
+
+
+
+</body>
+
+</html>

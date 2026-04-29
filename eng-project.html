@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弱弱製作</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #eef3f8;
+            margin: 0;
+        }
+
+        .wrapper {
+            max-width: 1024px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .custom-nav {
+            background-color: #2c5282;
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        .custom-nav ul {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-nav ul li {
+            float: left;
+            list-style: none;
+        }
+
+        .custom-nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 18px;
+            background-color: #4299e1;
+            margin-right: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .custom-nav ul li a:hover {
+            background-color: #2b6cb0;
+        }
+
+        .custom-nav::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* ===== 主內容 ===== */
+        .content {
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #2c5282;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
+            color: #666;
+        }
+
+        /* 主按鈕 */
+        .main-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #38b2ac, #68d391);
+            width: 180px;
+            height: 60px;
+            margin-top: 30px;
+            text-decoration: none;
+            font-size: 22px;
+            color: #ffffff;
+            line-height: 60px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: linear-gradient(45deg, #319795, #48bb78);
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            background-color: #2c5282;
+            color: #ffffff;
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .wrapper {
+                width: 100%;
+                margin: 0;
+            }
+
+            .content {
+                padding: 40px 15px;
+            }
+
+            .content h1 {
+                font-size: 32px;
+            }
+
+            .content p {
+                font-size: 18px;
+            }
+
+            .custom-nav ul {
+                display: block;
+            }
+
+            .custom-nav ul li {
+                float: none;
+                margin-bottom: 10px;
+            }
+
+            .custom-nav ul li a {
+                display: block;
+                margin: 5px auto;
+                width: 80%;
+            }
+
+            .main-btn {
+                width: 150px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .content h1 {
+                font-size: 26px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .main-btn {
+                width: 90%;
+                display: block;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav class="custom-nav">
+            <ul>
+                <li><a href="eng-words.html" target="_blank">學習</a></li>
+                <li><a href="">筆記</a></li>
+                <li><a href="eng-news.html" target="_blank">最新消息</a></li>
+                <li><a href="" target="_blank">關於我們</a></li>
+                <li><a href="eng-contact-us.html" target="_blank">聯絡我們</a></li>
+            </ul>
+        </nav>
+
+        <!-- content -->
+        <div class="content">
+            <h1>歡迎您的到來</h1>
+            <p>收藏從未停止 行動從未開始</p>
+            <p>您能點進來 以經贏了大半部分的人們了</p>
+            <p>所以接下來開始耍廢 追劇玩遊戲吧</p>
+            <a href="" class="main-btn">佛系學習</a>
+            <a href="" class="main-btn">不痛離開</a>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            contact <br>
+            台中市工業區一路
+            電話:xxx
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+</body>
+
+</html>

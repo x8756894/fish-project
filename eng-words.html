@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eng_words</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+    <style>
+        @media (max-width: 768px) {
+
+            .timeline::before,
+            .timeline-dot::before {
+                display: none;
+            }
+        }
+
+        body {
+            background-color: #f8fafc;
+        }
+
+        #s01 {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* social */
+        .social-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .social-bar a {
+            color: black;
+            transition: .3s;
+        }
+
+        .social-bar a:hover {
+            transform: scale(1.2);
+        }
+
+        /* card */
+        .card-box {
+            border: none;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+            transition: .3s;
+            padding: 25px;
+        }
+
+        .card-box:hover {
+            transform: translateY(-10px);
+        }
+
+        /* section title */
+        .title {
+            text-align: center;
+            font-weight: bold;
+            margin: 40px 0 20px;
+        }
+
+        /* buttons area */
+        .btn-area {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* timeline img */
+        .pimg {
+            height: 250px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        footer {
+            background: #111827;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="text-start">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa-solid fa-a"></i>
+                    <i class="fa-solid fa-b"></i>
+                    <i class="fa-solid fa-c"></i>
+                </a>
+            </div>
+
+            <div class="text-end d-flex align-items-center">
+                <ul class="nav mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">
+                            <i class="fa-regular fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-words.html">
+                            <i class="fa-solid fa-book-bookmark"></i>學習</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-news.html">
+                            <i class="fa-regular fa-newspaper"></i>最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-about-us.html">
+                            <i class="fa-solid fa-circle-info"></i>關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-contact-us.html">
+                            <i class="fa-solid fa-phone"></i>聯絡我們</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="social-bar">
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-instagram fa-2x " style="color: rgb(223, 37, 161);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-facebook fa-2x" style="color: blue;"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-line fa-2x" style="color: rgb(22, 219, 32);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-threads fa-2x" style="color:black"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="container py-4">
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>TOEIC</h4>
+                    <p class="text-muted">職場英文考試</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>IELTS</h4>
+                    <p class="text-muted">留學英語能力</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>TOEFL</h4>
+                    <p class="text-muted">學術英文能力</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <h2 class="text-center fw-bold my-5">學習時間軸</h2>
+
+    <section class="container timeline">
+        <div class="row align-items-center timeline-item timeline-dot">
+
+            <div class="col-md-6">
+                <div class="pimg" style="background-image:url(images/word01.jpg)"></div>
+            </div>
+
+            <div class="col-md-6 text-center mt-3 mt-md-0">
+                <h3>TOEIC</h3>
+                <p>建立英文基礎與職場能力</p>
+
+                <div class="d-flex justify-content-center gap-2 mt-3">
+
+                    <a href="eng-TOEIC-start-learning-page1.html" class="btn btn-primary" target="_blank">
+                        開始學習
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle text-white" type="button" data-bs-toggle="dropdown">
+                            單字分類
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eng-TOEFL-category1.html" target="_blank">主題式單字</a></li>
+                            <li><a class="dropdown-item" href="eng-TOEFL-category2.html" target="_blank">A-Z 單字</a></li>
+                        </ul>
+                    </div>
+                    <a href="eng-TOEIC01.html" class="btn btn-warning text-white" target="_blank">
+                        練功坊
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row align-items-center flex-md-row-reverse timeline-item timeline-dot">
+
+            <div class="col-md-6">
+                <div class="pimg" style="background-image:url(images/word02.jpg)"></div>
+            </div>
+
+            <div class="col-md-6 text-center mt-3 mt-md-0">
+                <h3>IELTS</h3>
+                <p>提升國際英語能力</p>
+
+                <div class="d-flex justify-content-center gap-2 mt-3">
+
+                    <a href="eng-IELTS-start-learning-page1.html" class="btn btn-primary" target="_blank">開始學習</a>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle text-white" type="button" data-bs-toggle="dropdown">
+                            單字分類
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eng-IELTS-category1.html" target="_blank">主題式單字</a></li>
+                            <li><a class="dropdown-item" href="eng-TOEFL-category2.html" target="_blank">A-Z 單字</a></li>
+                        </ul>
+                    </div>
+                    <a href="eng-IELTS01.html" class="btn btn-warning text-white" target="_blank">
+                        練功坊
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row align-items-center timeline-item timeline-dot">
+
+            <div class="col-md-6">
+                <div class="pimg" style="background-image:url(images/word03.jpg)"></div>
+            </div>
+
+            <div class="col-md-6 text-center mt-3 mt-md-0">
+                <h3>TOEFL</h3>
+                <p>學術英文訓練</p>
+
+                <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
+                    <a href="eng-TOEFL-start-learning-page1.html" class="btn btn-primary" target="_blank">
+                        開始學習
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle text-white" type="button" data-bs-toggle="dropdown">
+                            單字分類
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eng-TOEFL-category1.html" target="_blank">主題式單字</a></li>
+                            <li><a class="dropdown-item" href="eng-TOEFL-category2.html" target="_blank">A-Z 單字</a></li>
+                        </ul>
+                    </div>
+                    <a href="eng-TOEFL01.html" class="btn btn-warning text-white" target="_blank">
+                        練功坊
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <footer class="text-center text-light py-4">
+        <div class="container">
+            <h5>ABC English</h5>
+            <p class="text-secondary mb-0">© 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+
+</body>
+
+</html>

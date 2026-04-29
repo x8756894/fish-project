@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>托福分類單字(生活類)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card-flip {
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-flip.active .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card-front {
+            background-color: #D2A679;
+            color: #4B2E2E;          
+            font-size: 26px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-back {
+            background-color: #FFF2CC;
+            /* 奶油色 */
+            color: #4B2E2E;
+            font-size: 18px;
+            border: 1px solid #4B2E2E;
+            transform: rotateY(180deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center my-3" id="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="eng-TOEFL-start-learning-page1.html"
+                            aria-current="page">1</a></li>
+                    <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page2.html">2</a></li>
+                    <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page3.html">3</a></li>
+                    <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page4.html">4</a></li>
+                    <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page5.html">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center">英文單字字卡</h1>
+        <div class="row" id="cardContainer"></div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+
+    <script>
+        const words = [
+            { word: "diet", pos: "n.", meaning: "飲食" },
+            { word: "rent", pos: "v./n.", meaning: "租用、租金" },
+            { word: "schedule", pos: "n.", meaning: "時間表、日程" },
+            { word: "cleaning", pos: "n.", meaning: "清潔" },
+            { word: "reservation", pos: "n.", meaning: "預訂" },
+            { word: "neighbor", pos: "n.", meaning: "鄰居" },
+            { word: "subway", pos: "n.", meaning: "地鐵" },
+            { word: "ticket", pos: "n.", meaning: "票" },
+            { word: "room", pos: "n.", meaning: "房間" },
+            { word: "garden", pos: "n.", meaning: "花園" }
+        ];
+
+        const container = document.getElementById("cardContainer");
+
+        words.forEach(item => {
+            const col = document.createElement("div");
+            col.className = "col-6 mt-3";
+
+            col.innerHTML = `
+                <div class="card-flip">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            ${item.word}
+                        </div>
+                        <div class="card-back">
+                            <p><strong>${item.meaning}</strong></p>
+                            <p>${item.pos}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            col.querySelector(".card-flip").addEventListener("click", function () {
+                this.classList.toggle("active");
+            });
+
+            container.appendChild(col);
+        });
+    </script>
+
+</body>
+
+</html>

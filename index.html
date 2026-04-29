@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC英文教學網</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 40vh;
+            }
+        }
+
+        body {
+            background-color: #F1F5F9;
+        }
+
+        section {
+            padding: 80px 0px;
+        }
+
+        .bg-cover {
+            background-position: center;
+            background-size: cover;
+        }
+
+        .s02-img {
+            width: 100px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-item {
+            min-height: 400px;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+        }
+
+        .carousel-item::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.2));
+        }
+
+        .social-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .social-bar a {
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .social-bar a:hover {
+            transform: scale(1.2);
+        }
+
+        .testimonial-card {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .s07-imgbox {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .s07-imgbox img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-wrapper {
+            position: relative;
+            cursor: pointer;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-wrapper img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .video-wrapper:hover .play-btn {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .s09-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .s09-img {
+            width: 90px;
+            height: 120px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .s09-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .s09-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        #s01 {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        #s03 {
+            background: linear-gradient(135deg, #E0E7FF, #F1F5F9);
+        }
+
+        #s04 {
+            background-color: #ffffff;
+        }
+
+        #s05 {
+            background-color: #f8fafc;
+        }
+
+        #s06 {
+            background: #EEF2FF;
+        }
+
+        #s07 {
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+
+        #s08 {
+            background-color: #1f2937;
+            color: white;
+        }
+
+        #s09 {
+            background-color: #f1f5f9;
+        }
+
+        #s10 {
+            background-color: #ffffff;
+        }
+
+        footer {
+            background-color: #111827;
+        }
+
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-primary {
+            background-color: #4A90E2;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #357ABD;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="text-start">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa-solid fa-a"></i>
+                    <i class="fa-solid fa-b"></i>
+                    <i class="fa-solid fa-c"></i>
+                </a>
+            </div>
+
+            <div class="text-end d-flex align-items-center">
+                <ul class="nav mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">
+                            <i class="fa-regular fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-words.html">
+                            <i class="fa-solid fa-book-bookmark"></i>學習</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-news.html">
+                            <i class="fa-regular fa-newspaper"></i>最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-about-us.html">
+                            <i class="fa-solid fa-circle-info"></i>關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-contact-us.html">
+                            <i class="fa-solid fa-phone"></i>聯絡我們</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="social-bar">
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-instagram fa-2x " style="color: rgb(223, 37, 161);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-facebook fa-2x" style="color: blue;"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-line fa-2x" style="color: rgb(22, 219, 32);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-threads fa-2x" style="color:black"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="s02">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/learn1.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/learn2.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/learn3.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/learn4.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/learn5.jpg" class="d-block w-100" alt="">
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+
+    </section>
+
+    <section id="s03">
+        <div class="row align-items-center">
+            <div class="col-md-5 bg-cover d-none d-md-block"
+                style="background-image: url(images/learn11.jpg); height: 300px;"></div>
+            <div class="content col-md-7 ps-5 py-5 wow animate__animated animate__fadeInRight" data-wow-delay="1s">
+                <h1>ABC 英文學習</h1>
+                <P>收藏從未停止 行動從未開始</P>
+
+            </div>
+            <div class="row mt-5 text-center">
+                <div class="col-12 col-sm-6 col-lg-3 mb-3">
+                    <div class="bg-white mt-3 p-3 rounded-4 shadow-sm border-top border-4 border-primary">
+                        <div class="h6 text-muted">累積學習時數</div>
+                        <div class="h4 fw-bold text-primary">
+                            <span class="counter01">999</span>/小時
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-3">
+                    <div class="bg-white mt-3 p-3 rounded-4 shadow-sm border-top border-4 border-success">
+                        <div class="h6 text-muted">完成課程數</div>
+                        <div class="h4 fw-bold text-success">
+                            <span class="counter02">20</span>/門
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-3">
+                    <div class="bg-white mt-3 p-3 rounded-4 shadow-sm border-top border-4 border-warning">
+                        <div class="h6 text-muted">學習單字量</div>
+                        <div class="h4 fw-bold text-warning">
+                            <span class="counter03">100</span>/個
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-3">
+                    <div class="bg-white mt-3 p-3 rounded-4 shadow-sm border-top border-4 border-danger">
+                        <div class="h6 text-muted">模擬測驗次數</div>
+                        <div class="h4 fw-bold text-danger">
+                            <span class="counter04">100</span>/次
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s04" class="py-5 bg-white">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0 wow animate__animated animate__fadeInLeft">
+                    <h2 class="fw-bold mb-3">
+                        我們的學英文理念
+                    </h2>
+
+                    <p class="text-muted fs-5">
+                        學英文不只是背單字，而是建立一種可以「自然使用」的能力。
+                        我們相信，只要方法對，每個人都可以用最輕鬆的方式學會英文。
+                    </p>
+
+                    <div class="mt-4">
+
+                        <div class="mb-3">
+                            每天 15 分鐘，建立語感習慣
+                        </div>
+
+                        <div class="mb-3">
+                            情境式學習，不再死背單字
+                        </div>
+
+                        <div class="mb-3">
+                            閱讀文章練習，即時修正發音
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 text-center">
+
+                    <img src="images/ABC.jpg" class="img-fluid rounded-4 shadow" alt="English Learning">
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s05" class="py-5 bg-light">
+        <div class="container">
+
+            <h2 class="text-center mb-5 fw-bold wow animate__animated animate__fadeInDown">
+                熱門課程
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="images/learn12.jpg" class="card-img-top rounded-top-4">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">TOEIC</h5>
+                            <p class="text-muted">從 0 開始學英文</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="images/learn13.jpg" class="card-img-top rounded-top-4">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">IELTS</h5>
+                            <p class="text-muted">從 0 開始學英文</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="images/learn14.jpg" class="card-img-top rounded-top-4">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">TOEFL</h5>
+                            <p class="text-muted">從 0 開始學英文</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="s06" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-5 wow animate__animated animate__fadeInDown">為什麼選擇我們</h2>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="feature-box wow animate__animated animate__fadeIn">
+                        <i class="fa-solid fa-brain fa-3x text-primary mb-3"></i>
+                        <h5>AI 智能學習</h5>
+                        <p class="text-muted">依照你的程度推薦最適合的課程</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-box wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                        <i class="fa-solid fa-book-open-reader fa-3x text-success mb-3"></i>
+                        <h5>閱讀訓練</h5>
+                        <p class="text-muted">即時語音練習與發音修正</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-box wow animate__animated animate__fadeIn" data-wow-delay="0.6s">
+                        <i class="fa-solid fa-book fa-3x text-warning mb-3"></i>
+                        <h5>系統化課程</h5>
+                        <p class="text-muted">從基礎到進階完整規劃</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="feature-box wow animate__animated animate__fadeIn" data-wow-delay="0.9s">
+                        <i class="fa-regular fa-clock fa-3x text-secondary mb-3"></i>
+                        <h5>彈性學習</h5>
+                        <p class="text-muted">隨時隨地都能學英文</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="s07" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-md-start text-center mb-4 mb-md-0">
+                    <h2 class="wow animate__animated animate__backInUp">
+                        學<br>
+                        生<br>
+                        回<br>
+                        饋
+                    </h2>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="row text-center">
+
+                        <div class="col-md-4 mt-3 wow animate__animated animate__bounceInRight" data-wow-duration="3s">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="s07-imgbox">
+                                    <img src="images/people01.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <p>"從完全不會到 TOEIC 700！"</p>
+                                    <h6 class="text-muted">小明</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mt-3 wow animate__animated animate__bounceInRight" data-wow-duration="4s">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="s07-imgbox">
+                                    <img src="images/people02.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <p>"老師教學很有系統！"</p>
+                                    <h6 class="text-muted">小美</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mt-3 wow animate__animated animate__bounceInRight" data-wow-duration="5s">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="s07-imgbox">
+                                    <img src="images/people03.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <p>"每天學 30 分鐘真的有差"</p>
+                                    <h6 class="text-muted">David</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="s08" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 text-white">課程介紹</h2>
+
+            <div class="video-wrapper" id="video">
+                <img src="images/video01.jpg" class="img-fluid shadow-lg" alt="影片封面">
+
+                <div class="play-btn">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s09" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">專業講師</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher01.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">John 老師</h5>
+                            <p class="mb-1 text-muted">10年教學經驗</p>
+                            <small class="text-secondary">專攻 TOEIC</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher02.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">Emily 老師</h5>
+                            <p class="mb-1 text-muted">8年教學經驗</p>
+                            <small class="text-secondary">專攻 IELTS</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher03.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">David 老師</h5>
+                            <p class="mb-1 text-muted">12年教學經驗</p>
+                            <small class="text-secondary">專攻 TOEFL</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher04.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">Sophie 老師</h5>
+                            <p class="mb-1 text-muted">6年教學經驗</p>
+                            <small class="text-secondary">專攻 英語會話</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher05.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">Kevin 老師</h5>
+                            <p class="mb-1 text-muted">9年教學經驗</p>
+                            <small class="text-secondary">專攻 商用英文</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+                        <img src="images/teacher06.jpg" class="s09-img me-3" alt="">
+                        <div>
+                            <h5 class="fw-bold mb-1">Lily 老師</h5>
+                            <p class="mb-1 text-muted">7年教學經驗</p>
+                            <small class="text-secondary">專攻 發音訓練</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+
+                        <img src="images/AI01.jpg" class="s09-img me-3" alt="">
+
+                        <div class="w-100">
+                            <h5 class="fw-bold mb-1">AI 老師</h5>
+                            <p class="mb-1 text-muted">即時英文對話練習</p>
+                            <small class="text-secondary">專攻 日常英文</small>
+
+                            <div id="chatBox"
+                                style="height:100px; overflow-y:auto; background:#f8fafc; border-radius:8px; padding:5px; margin-top:5px;">
+                                <p style="font-size:12px;"><strong>AI:</strong> Hello!</p>
+                            </div>
+
+                            <input type="text" id="userInput" class="form-control form-control-sm mt-1">
+                            <button onclick="sendMessage()" class="btn btn-primary btn-sm w-100 mt-1">Send</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+
+                        <img src="images/AI02.jpg" class="s09-img me-3" alt="">
+
+                        <div class="w-100">
+                            <h5 class="fw-bold mb-1">AI 工作老師</h5>
+                            <p class="mb-1 text-muted">職場英文對話練習</p>
+                            <small class="text-secondary">專攻 商用英文</small>
+
+                            <div id="chatBoxWork"
+                                style="height:100px; overflow-y:auto; background:#f8fafc; border-radius:8px; padding:5px; margin-top:5px;">
+                                <p style="font-size:12px;"><strong>AI:</strong> Hello! Let's practice business English.
+                                </p>
+                            </div>
+
+                            <input type="text" id="userInputWork" class="form-control form-control-sm mt-1">
+                            <button onclick="sendWork()" class="btn btn-primary btn-sm w-100 mt-1">Send</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 shadow-sm rounded-3">
+
+                        <img src="images/AI03.jpg" class="s09-img me-3" alt="">
+
+                        <div class="w-100">
+                            <h5 class="fw-bold mb-1">AI 旅遊老師</h5>
+                            <p class="mb-1 text-muted">旅遊英文對話練習</p>
+                            <small class="text-secondary">專攻 旅遊會話</small>
+
+                            <div id="chatBoxTravel"
+                                style="height:100px; overflow-y:auto; background:#f8fafc; border-radius:8px; padding:5px; margin-top:5px;">
+                                <p style="font-size:12px;"><strong>AI:</strong> Hi! Ready for travel English?</p>
+                            </div>
+
+                            <input type="text" id="userInputTravel" class="form-control form-control-sm mt-1">
+                            <button onclick="sendTravel()" class="btn btn-primary btn-sm w-100 mt-1">Send</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s10">
+        <div class="container py-3">
+            <div class="row align-items-stretch">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="ratio ratio-4x3 shadow-sm rounded-3 overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6009419213938!2d121.5174062!3d25.047613300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96d81d130e9%3A0x6117b31db9ebb9c1!2z5b6u6aKo5Y-w5YyX6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1777434292817!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <h3 class="mb-4 fw-bold">英文課程試聽</h3>
+
+                    <div class="mb-3">
+                        <label class="form-label">姓名</label>
+                        <input type="text" class="form-control" id="name01">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">信箱</label>
+                        <input type="email" class="form-control" id="email01">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">電話</label>
+                        <input type="text" class="form-control" id="phone01">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">人數</label>
+                        <input type="number" class="form-control" id="people01">
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button id="submitBtn" class="btn btn-primary w-50">送出</button>
+                        <button id="cancelBtn" class="btn btn-secondary w-50">取消</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light pt-5">
+        <div class="container text-center">
+            <h4>ABC English</h4>
+            <p class="text-secondary">© 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        function sendMessage() {
+            let input = document.getElementById("userInput").value;
+            let chatBox = document.getElementById("chatBox");
+
+            if (input.trim() === "") return;
+
+            chatBox.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+            let reply = "";
+            let text = input.toLowerCase();
+
+            if (text.includes("hello") || text.includes("hi")) {
+                reply = "Hi! Nice to meet you!";
+            } else if (text.includes("how are you")) {
+                reply = "I'm good! How about you?";
+            } else if (text.includes("bye")) {
+                reply = "Bye! See you!";
+            } else {
+                reply = "Good! Keep practicing!";
+            }
+
+            chatBox.innerHTML += "<p><strong>AI:</strong> " + reply + "</p>";
+
+            document.getElementById("userInput").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendWork() {
+            let input = document.getElementById("userInputWork").value;
+            let chatBox = document.getElementById("chatBoxWork");
+
+            if (input.trim() === "") return;
+
+            chatBox.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+
+            let reply = "";
+            let text = input.toLowerCase();
+
+            if (text.includes("meeting")) {
+                reply = "Let's schedule a meeting.";
+            } else if (text.includes("email")) {
+                reply = "Please send me an email.";
+            } else {
+                reply = "Good business English!";
+            }
+
+            chatBox.innerHTML += "<p><strong>AI:</strong> " + reply + "</p>";
+
+            document.getElementById("userInputWork").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendTravel() {
+            let input = document.getElementById("userInputTravel").value;
+            let chatBox = document.getElementById("chatBoxTravel");
+
+            if (input.trim() === "") return;
+
+            chatBox.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+
+            let reply = "";
+            let text = input.toLowerCase();
+
+            if (text.includes("hotel")) {
+                reply = "I want to book a hotel.";
+            } else if (text.includes("airport")) {
+                reply = "Where is the airport?";
+            } else {
+                reply = "Enjoy your trip!";
+            }
+
+            chatBox.innerHTML += "<p><strong>AI:</strong> " + reply + "</p>";
+
+            document.getElementById("userInputTravel").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        $(function () {
+
+            let flag_name01 = false;
+            let flag_email01 = false;
+            let flag_phone01 = false;
+            let flag_people01 = false;
+            let flag_meal01 = false;
+
+            $("#name01").blur(function () {
+                let len = $(this).val().length;
+
+                if (len > 0 && len <= 10) {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                    flag_name01 = true;
+                } else {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                    flag_name01 = false;
+                }
+            });
+
+            $("#email01").blur(function () {
+                if ($(this).val().length > 1 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_email01 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_email01 = false;
+                }
+            });
+
+            $("#phone01").blur(function () {
+                if ($(this).val().length > 10 && $(this).val().length < 15) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_phone01 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_phone01 = false;
+                }
+            });
+
+            $("#people01").blur(function () {
+                let val = parseInt($(this).val());
+
+                if (val > 0 && val <= 100) {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                    flag_people01 = true;
+                } else {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                    flag_people01 = false;
+                }
+            });
+
+            $("#submitBtn").click(function () {
+
+                if (flag_name01 && flag_email01 && flag_phone01 && flag_people01) {
+                    alert("送出成功！");
+                } else {
+                    alert("請檢查欄位");
+                }
+
+            });
+
+            $("#cancelBtn").click(function () {
+
+                $("#name01,#email01,#phone01,#people01")
+                    .val("")
+                    .removeClass("is-valid is-invalid");
+
+                flag_name01 = false;
+                flag_email01 = false;
+                flag_phone01 = false;
+                flag_people01 = false;
+            });
+
+        });
+
+        $(function () {
+            const counterUp = window.counterUp.default;
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        });
+                        el.classList.add('is-visible');
+                    }
+                });
+            };
+
+            const IO = new IntersectionObserver(callback, { threshold: 0.3 });
+
+            const el01 = document.querySelector('.counter01');
+            IO.observe(el01);
+
+            const el02 = document.querySelector('.counter02');
+            IO.observe(el02);
+
+            const el03 = document.querySelector('.counter03');
+            IO.observe(el03);
+
+            const el04 = document.querySelector('.counter04');
+            IO.observe(el04);
+
+        });
+
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+</body>
+
+</html>

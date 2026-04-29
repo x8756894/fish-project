@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文筆記系統</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        /* 🌈 背景 */
+        body {
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        /* 🧱 卡片 */
+        .word-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        /* 滑過效果 */
+        .word-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 單字 */
+        .word {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c5282;
+        }
+
+        /* 中文 */
+        .meaning {
+            font-size: 16px;
+            margin-top: 8px;
+            color: #555;
+        }
+
+        /* 標題 */
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2c5282;
+        }
+
+        /* 輸入區 */
+        .input-box input {
+            margin: 5px;
+        }
+
+        /* 按鈕間距 */
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===================== -->
+        <!-- 📘 我的單字 -->
+        <!-- ===================== -->
+        <h2 class="section-title">📘 我的英文筆記</h2>
+
+        <div class="input-box">
+            <!-- 輸入單字 -->
+            <input type="text" id="word" class="form-control" placeholder="英文單字">
+
+            <!-- 輸入中文 -->
+            <input type="text" id="meaning" class="form-control" placeholder="中文意思">
+
+            <!-- 新增 -->
+            <button onclick="addNote()" class="btn btn-primary w-100">新增單字</button>
+        </div>
+
+        <!-- ⭐ 卡片容器 -->
+        <div class="row mt-3" id="noteList"></div>
+
+
+
+        <!-- ===================== -->
+        <!-- ❌ 錯題 -->
+        <!-- ===================== -->
+        <h2 class="section-title">❌ 錯題筆記</h2>
+
+        <div class="row" id="wrongList"></div>
+
+        <button onclick="clearWrong()" class="btn btn-danger w-100">
+            清空全部錯題
+        </button>
+
+    </div>
+
+
+
+    <script>
+
+        // =========================
+        // 📘 我的單字
+        // =========================
+
+        // 從 localStorage 讀資料
+        let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+        // ⭐ 顯示筆記
+        function renderNotes() {
+
+            let container = document.getElementById("noteList");
+
+            container.innerHTML = "";
+
+            notes.forEach((n, index) => {
+
+                container.innerHTML += `
+
+        <!-- col-12 col-md-6 = 手機1排1個 / 電腦2個 -->
+        <div class="col-12 col-md-6">
+
+            <div class="word-card">
+
+                <!-- 英文 -->
+                <div class="word">${n.word}</div>
+
+                <!-- 中文 -->
+                <div class="meaning">${n.meaning}</div>
+
+                <!-- 刪除 -->
+                <button class="btn btn-sm btn-outline-danger w-100"
+                onclick="deleteNote(${index})">
+                刪除
+                </button>
+
+            </div>
+
+        </div>
+        `;
+            });
+        }
+
+
+        // ⭐ 新增單字
+        function addNote() {
+
+            let word = document.getElementById("word").value.trim();
+            let meaning = document.getElementById("meaning").value.trim();
+
+            // 防呆
+            if (word === "" || meaning === "") {
+                alert("請輸入完整內容");
+                return;
+            }
+
+            // 加入陣列
+            notes.push({ word, meaning });
+
+            // 存進 localStorage
+            localStorage.setItem("notes", JSON.stringify(notes));
+
+            // 清空欄位
+            document.getElementById("word").value = "";
+            document.getElementById("meaning").value = "";
+
+            renderNotes();
+        }
+
+
+        // ⭐ 刪除單字
+        function deleteNote(index) {
+            notes.splice(index, 1);
+            localStorage.setItem("notes", JSON.stringify(notes));
+            renderNotes();
+        }
+
+
+
+        // =========================
+        // ❌ 錯題區
+        // =========================
+
+        // 讀取錯題
+        let wrongList = JSON.parse(localStorage.getItem("wrongQuestions")) || [];
+
+        // ⭐ 顯示錯題
+        function renderWrong() {
+
+            let container = document.getElementById("wrongList");
+
+            container.innerHTML = "";
+
+            wrongList.forEach((q, index) => {
+
+                container.innerHTML += `
+        <div class="col-12 col-md-6">
+
+            <div class="word-card">
+
+                <div class="word">${q.word}</div>
+
+                <div class="meaning">${q.correct}</div>
+
+                <button class="btn btn-sm btn-outline-danger w-100"
+                onclick="deleteWrong(${index})">
+                刪除
+                </button>
+
+            </div>
+
+        </div>
+        `;
+            });
+        }
+
+
+        // ⭐ 刪除單一錯題
+        function deleteWrong(index) {
+            wrongList.splice(index, 1);
+            localStorage.setItem("wrongQuestions", JSON.stringify(wrongList));
+            renderWrong();
+        }
+
+
+        // ⭐ 清空全部錯題
+        function clearWrong() {
+            localStorage.removeItem("wrongQuestions");
+            wrongList = [];
+            renderWrong();
+        }
+
+
+
+        // =========================
+        // 🚀 初始化
+        // =========================
+
+        renderNotes();
+        renderWrong();
+
+    </script>
+
+</body>
+
+</html>

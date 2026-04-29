@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅思學習page5(日常生活)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            IELTS 日常生活相關英文單字
+        </h1>
+        <p class="text-muted">從日常生活開始，建立你的英文基礎</p>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-daily-life4.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-daily-life.html">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-daily-life2.html">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-daily-life3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-daily-life4.html">4</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">5</a>
+                    </li>
+
+                    <li class="page-item disabled">
+                        <a class="page-link">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>logical</td>
+                                <td>(adj.)</td>
+                                <td>合理的</td>
+                                <td>His argument is logical.</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("method", "(n.)", "方法", "This method works well.");
+        addWord("normal", "(adj.)", "正常的", "It’s normal to feel nervous.");
+        addWord("opportunity", "(n.)", "機會", "This is a great opportunity.");
+        addWord("process", "(n./v.)", "過程", "Learning is a process.");
+        addWord("require", "(v.)", "需要", "This job requires experience.");
+        addWord("solution", "(n.)", "解決方法", "We need a solution.");
+        addWord("task", "(n.)", "任務", "I completed the task.");
+        addWord("unique", "(adj.)", "獨特的", "Everyone is unique.");
+        addWord("value", "(n./v.)", "價值", "I value honesty.");
+        addWord("willing", "(adj.)", "願意的", "She is willing to help.");
+        addWord("analyze", "(v.)", "分析", "We need to analyze data.");
+        addWord("compare", "(v.)", "比較", "Compare these two options.");
+        addWord("develop", "(v.)", "發展", "The city is developing fast.");
+        addWord("evaluate", "(v.)", "評估", "Teachers evaluate students.");
+    </script>
+
+
+
+</body>
+
+</html>

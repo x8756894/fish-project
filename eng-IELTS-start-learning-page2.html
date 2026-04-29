@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅思學習page2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            IELTS 英文單字
+        </h1>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page1.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page1.html">1</a>
+                    </li>
+
+                    <li class="page-item active">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page4.html">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page5.html">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-start-learning-page3.html">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>develop</td>
+                                <td>(v.)</td>
+                                <td>發展</td>
+                                <td>The city is developing fast.</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("economy", "(n.)", "經濟", "The economy is growing.");
+        addWord("effect", "(n.)", "效果", "The effect is obvious.");
+        addWord("environment", "(n.)", "環境", "We must protect the environment.");
+        addWord("evidence", "(n.)", "證據", "There is no evidence.");
+        addWord("factor", "(n.)", "因素", "Price is an important factor.");
+        addWord("feature", "(n.)", "特徵", "This phone has many features.");
+        addWord("function", "(n.)", "功能", "The function is useful.");
+        addWord("global", "(adj.)", "全球的", "Global warming is serious.");
+        addWord("impact", "(n./v.)", "影響", "Technology impacts education.");
+        addWord("increase", "(v./n.)", "增加", "Sales increased last year.");
+        addWord("individual", "(n./adj.)", "個人；個別的", "Each individual is unique.");
+        addWord("industry", "(n.)", "產業", "The tech industry is growing.");
+        addWord("interpret", "(v.)", "解釋", "How do you interpret this result?");
+        addWord("issue", "(n.)", "問題", "Climate change is a big issue.");
+    </script>
+
+
+
+</body>
+
+</html>

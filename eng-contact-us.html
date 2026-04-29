@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聯絡我們</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/mycss1.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background: #f8fafc;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        #s01 {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .social-bar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .social-bar a {
+            color: black;
+            transition: 0.3s;
+        }
+
+        .social-bar a:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+
+        .contact-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #4A90E2;
+        }
+
+        .btn-primary {
+            background-color: #4A90E2;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #357ABD;
+        }
+
+        footer {
+            background-color: #111827;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="text-start">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa-solid fa-a"></i>
+                    <i class="fa-solid fa-b"></i>
+                    <i class="fa-solid fa-c"></i>
+                </a>
+            </div>
+
+            <div class="text-end d-flex align-items-center">
+                <ul class="nav mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">
+                            <i class="fa-regular fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-words.html">
+                            <i class="fa-solid fa-book-bookmark"></i>學習</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-news.html">
+                            <i class="fa-regular fa-newspaper"></i>最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-about-us.html">
+                            <i class="fa-solid fa-circle-info"></i>關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="eng-contact-us.html">
+                            <i class="fa-solid fa-phone"></i>聯絡我們</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="social-bar">
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-instagram fa-2x " style="color: rgb(223, 37, 161);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-facebook fa-2x" style="color: blue;"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-line fa-2x" style="color: rgb(22, 219, 32);"></i>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <i class="fa-brands fa-threads fa-2x" style="color:black"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="s02" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">聯絡我們</h2>
+                <p class="text-muted">有任何問題，歡迎與我們聯繫</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+
+                        <h4 class="fw-bold mb-4">聯絡資訊</h4>
+
+                        <p><i class="fa-solid fa-phone text-primary me-2"></i> 04-1234-5678</p>
+
+                        <p><i class="fa-solid fa-envelope text-primary me-2"></i> abcenglish@gmail.com</p>
+
+                        <p><i class="fa-solid fa-location-dot text-primary me-2"></i> 台北市英文學習中心</p>
+
+                        <hr>
+
+                        <p class="text-muted">
+                            我們將於 24 小時內回覆您的訊息，歡迎隨時聯絡！
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+
+                        <h4 class="fw-bold mb-4">線上留言</h4>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="姓名">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="電話">
+                        </div>
+
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="4" placeholder="請輸入您的問題"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary w-100" id="sendBtn">
+                            送出訊息
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+
+        <div class="container">
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">聯絡流程說明</h3>
+                    <p class="text-muted">
+                        當你送出訊息後，我們會依照標準流程處理你的需求。
+                    </p>
+
+                    <ul class="text-muted">
+                        <li>系統即時收到訊息</li>
+                        <li>24 小時內專人回覆</li>
+                        <li>必要時電話聯繫</li>
+                        <li>提供最適合課程建議</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h3 class="fw-bold mb-3">常見問題 FAQ</h3>
+
+                    <div class="mb-3">
+                        <strong>Q：可以試聽課程嗎？</strong>
+                        <p class="text-muted">A：可以，我們提供免費體驗課程。</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Q：完全零基礎可以學嗎？</strong>
+                        <p class="text-muted">A：可以，課程從基礎開始設計。</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Q：可以用手機上課嗎？</strong>
+                        <p class="text-muted">A：支援手機、平板與電腦。</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div style="height: 100px;"></div>
+
+    </section>
+    <footer class="text-center text-light py-4">
+        <div class="container">
+            <h5>ABC English</h5>
+            <p class="text-secondary mb-0">© 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+        document.getElementById("sendBtn").addEventListener("click", function () {
+
+            Swal.fire({
+                icon: "success",
+                title: "送出成功！",
+                text: "我們已收到您的訊息，將盡快與您聯絡。",
+                confirmButtonText: "確定"
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

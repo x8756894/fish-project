@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小恐龍</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #game {
+            width: 600px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            background: #f7f7f7;
+        }
+
+        #dino {
+            width: 40px;
+            height: 40px;
+            background: green;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+        }
+
+        .cactus {
+            width: 20px;
+            height: 30px;
+            /* ↓ 降低高度 */
+            background: red;
+            position: absolute;
+            bottom: 0;
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>小恐龍</h2>
+    <p>空白鍵跳躍</p>
+    <p>分數：<span id="score">0</span></p>
+
+    <div id="game">
+        <div id="dino"></div>
+    </div>
+
+    <script>
+        const dino = document.getElementById("dino");
+        const game = document.getElementById("game");
+        const scoreEl = document.getElementById("score");
+
+        let jumping = false;
+        let velocity = 0;
+        let gravity = 0.5; // ↓ 比較慢下降
+        let score = 0;
+        let gameOver = false;
+
+        // 跳躍（加強跳高）
+        document.addEventListener("keydown", e => {
+            if (e.code === "Space" && !jumping) {
+                velocity = 13; // ↑ 跳更高
+                jumping = true;
+            }
+        });
+
+        function createCactus() {
+            if (gameOver) return;
+
+            const cactus = document.createElement("div");
+            cactus.classList.add("cactus");
+            game.appendChild(cactus);
+
+            let cactusX = 600;
+
+            const move = setInterval(() => {
+                if (gameOver) {
+                    clearInterval(move);
+                    return;
+                }
+
+                cactusX -= 4; // ↓ 變慢一點
+                cactus.style.right = (600 - cactusX) + "px";
+
+                const dinoRect = dino.getBoundingClientRect();
+                const cactusRect = cactus.getBoundingClientRect();
+
+                // ↓ 放寬碰撞（比較合理）
+                if (
+                    dinoRect.left < cactusRect.right &&
+                    dinoRect.right > cactusRect.left &&
+                    dinoRect.bottom - 10 > cactusRect.top
+                ) {
+                    gameOver = true;
+                    alert("遊戲結束！分數：" + score);
+                }
+
+                if (cactusX < -20) {
+                    cactus.remove();
+                    clearInterval(move);
+                }
+
+            }, 20);
+
+            setTimeout(createCactus, Math.random() * 2000 + 1200);
+        }
+
+        function update() {
+            if (gameOver) return;
+
+            let bottom = parseFloat(window.getComputedStyle(dino).bottom);
+
+            if (jumping) {
+                velocity -= gravity;
+                bottom += velocity;
+
+                if (bottom <= 0) {
+                    bottom = 0;
+                    jumping = false;
+                }
+
+                dino.style.bottom = bottom + "px";
+            }
+
+            score++;
+            scoreEl.textContent = score;
+
+            requestAnimationFrame(update);
+        }
+
+        createCactus();
+        update();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅思學習page3(情緒與感覺)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .vocab-card {
+            border: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .note-btn {
+            background-color: #198754;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 12px;
+            border: none;
+        }
+
+        .note-btn:hover {
+            background-color: #157347;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s01" class="py-5 text-center bg-white shadow-sm">
+        <h1 class="section-title wow animate__animated animate__fadeInDown">
+            IELTS 情緒與感覺相關英文單字
+        </h1>
+        <p class="text-muted">從日常生活開始，建立你的英文基礎</p>
+    </section>
+
+    <section id="s02" class="py-3">
+        <div class="container">
+            <nav>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions2.html">Previous</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions.html">1</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions2.html">2</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions4.html">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions5.html">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="eng-IELTS-emotions4.html">Next</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="s03" class="py-5">
+        <div class="container">
+
+            <div class="card vocab-card shadow-sm wow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜尋單字...">
+                    <table class="table table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th>英文單字</th>
+                                <th>詞性</th>
+                                <th>中文解釋</th>
+                                <th>例句</th>
+                                <th>筆記</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="vocabTable">
+                            <tr>
+                                <td>sad</td>
+                                <td>(adj.)</td>
+                                <td>難過的</td>
+                                <td>She felt sad about the news.</td>
+                                <td><button class="note-btn">筆記</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="jquery-4.0.0.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+
+    <script>
+        new WOW().init();
+
+        const table = document.getElementById("vocabTable");
+
+        function addWord(word, pos, meaning, sentence) {
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = word;
+            cell2.textContent = pos;
+            cell3.textContent = meaning;
+            cell4.textContent = sentence;
+            cell5.innerHTML = `<button class="note-btn">筆記</button>`;
+        }
+        addWord("unhappy", "(adj.)", "不快樂的", "He is unhappy with his job.");
+        addWord("depressed", "(adj.)", "沮喪的", "She felt depressed after the failure.");
+        addWord("miserable", "(adj.)", "痛苦的", "He was miserable during the illness.");
+        addWord("gloomy", "(adj.)", "憂鬱的", "The weather made him feel gloomy.");
+        addWord("sorrowful", "(adj.)", "悲傷的", "She gave a sorrowful smile.");
+        addWord("heartbroken", "(adj.)", "心碎的", "He was heartbroken after the breakup.");
+        addWord("disappointed", "(adj.)", "失望的", "I’m disappointed with the result.");
+        addWord("frustrated", "(adj.)", "沮喪的", "She felt frustrated by the delay.");
+        addWord("annoyed", "(adj.)", "生氣的", "He was annoyed by the noise.");
+        addWord("angry", "(adj.)", "生氣的", "She is angry at him.");
+        addWord("furious", "(adj.)", "憤怒的", "He was furious about the mistake.");
+        addWord("enraged", "(adj.)", "暴怒的", "The driver became enraged.");
+        addWord("irritated", "(adj.)", "不耐煩的", "I was irritated by the interruption.");
+        addWord("bitter", "(adj.)", "憤恨的", "He felt bitter about losing.");
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅思學習page3(學術/教育類)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <link rel="stylesheet" href="css/table-rwd.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #ffe0b2;
+    }
+</style>
+
+<body>
+
+    <head>
+        <title>英文單字表</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center my-3" id="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page1.html">1</a></li>
+                        <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page2.html">2</a></li>
+                        <li class="page-item active"><a class="page-link" href="eng-TOEFL-start-learning-page3.html"
+                                aria-current="page">3</a></li>
+                        <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page4.html">4</a></li>
+                        <li class="page-item"><a class="page-link" href="eng-TOEFL-start-learning-page5.html">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+        <h1>英文單字表</h1>
+
+        <table id="vocabTable">
+            <thead>
+                <tr>
+                    <th>英文單字</th>
+                    <th>詞性</th>
+                    <th>中文解釋</th>
+                    <th>例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>analyze</td>
+                    <td>v.</td>
+                    <td>分析</td>
+                    <td>Researchers analyze the data carefully.</td>
+                </tr>
+                <tr>
+                    <td>theory</td>
+                    <td>n.</td>
+                    <td>理論</td>
+                    <td>This theory explains human behavior.</td>
+                </tr>
+                <tr>
+                    <td>research</td>
+                    <td>n./v.</td>
+                    <td>研究</td>
+                    <td>She conducts research on climate change.</td>
+                </tr>
+                <tr>
+                    <td>hypothesis</td>
+                    <td>n.</td>
+                    <td>假設</td>
+                    <td>The hypothesis was tested in the experiment.
+                    </td>
+                </tr>
+                <tr>
+                    <td>evidence</td>
+                    <td>n.</td>
+                    <td>證據</td>
+                    <td>There is strong evidence to support the claim.</td>
+                </tr>
+                <tr>
+                    <td>derive</td>
+                    <td>v.</td>
+                    <td>推導；取得</td>
+                    <td>The word is derived from Latin.</td>
+                </tr>
+                <tr>
+                    <td>significant</td>
+                    <td>adj.</td>
+                    <td>重要的；顯著的</td>
+                    <td>The results are statistically significant.</td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td>n.</td>
+                    <td>方法</td>
+                    <td>This method improves efficiency.</td>
+                </tr>
+                <tr>
+                    <td>data</td>
+                    <td>n.</td>
+                    <td>數據</td>
+                    <td>The data was collected over five years.</td>
+                </tr>
+                <tr>
+                    <td>conclude</td>
+                    <td>v.</td>
+                    <td>下結論</td>
+                    <td>The study concludes that exercise is beneficial.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-4.0.0.js"></script>
+        <script src="js/sweetalert2@11.js"></script>
+
+        <script>
+
+            const table = document.getElementById("vocabTable").getElementsByTagName('tbody')[0];
+
+            function addWord(word, meaning, sentence) {
+                const newRow = table.insertRow();
+
+                const cell1 = newRow.insertCell(0);
+                const cell2 = newRow.insertCell(1);
+                const cell3 = newRow.insertCell(2);
+
+                cell1.textContent = word;
+                cell2.textContent = meaning;
+                cell3.textContent = sentence;
+            }
+        </script>
+
+    </body>
+
+</html>
